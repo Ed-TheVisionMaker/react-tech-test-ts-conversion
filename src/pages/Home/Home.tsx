@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import DrinkImage from '../../components/DrinkImage';
 import DrinkText from '../../components/DrinkText';
-// import Dropdown from '../../components/DropdownMenu';
+import Dropdown from '../../components/Dropdown';
 import LoadingSpinner from '../../components/LoadingSpinner';
 
 interface PartialDrinkData {
@@ -122,6 +122,7 @@ function Home() {
           <div className='home-container'>
             <h2 className='home-title'>BrewDog</h2>
             <h3 className='home-tagline'>Something for everyone</h3>
+            <Dropdown />
             {/* <p className='home-dropdown-container'>
               Drinks Per Page
               <span className='home-dropdown-text-span'>
