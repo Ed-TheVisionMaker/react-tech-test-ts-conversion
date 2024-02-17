@@ -19,7 +19,6 @@ const Dropdown: React.FC = () => {
         <option value='20'>20</option>
         <option value='30'>30</option>
       </select>
-      <input type='submit' value='Submit' />
     </form>
   );
 };

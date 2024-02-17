@@ -12,22 +12,6 @@ function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [drinksList, setDrinksList] = useState<DrinksListData[]>([]);
   const [numberOfDrinks, setNumberOfDrinks] = useState(10);
-  const [showDropdown, setShowDropdown] = useState(false);
-
-  const handleShowDropdown = () => {
-    setShowDropdown((setShowDropdown) => !setShowDropdown);
-  };
-
-  const handleNumberChange = (e: React.ChangeEvent<HTMLButtonElement>) => {
-    const parsedDrinksNumber = parseInt(e.target.innerText);
-    setNumberOfDrinks(parsedDrinksNumber);
-    sessionStorage.setItem('numberOfDrinks', parsedDrinksNumber.toString());
-    setShowDropdown((setShowDropdown) => !setShowDropdown);
-  };
-
-  const handleClickAway = () => {
-    setShowDropdown(false);
-  };
 
   const hasData = () => {
     return drinksList.length > 0;
@@ -110,19 +94,6 @@ function Home() {
             <h2 className='home-title'>BrewDog</h2>
             <h3 className='home-tagline'>Something for everyone</h3>
             <Dropdown />
-            {/* <p className='home-dropdown-container'>
-              Drinks Per Page
-              <span className='home-dropdown-text-span'>
-                <Dropdown
-                  numberOfDrinks={numberOfDrinks}
-                  setNumberOfDrinks={setNumberOfDrinks}
-                  handleNumberChange={handleNumberChange}
-                  handleShowDropdown={handleShowDropdown}
-                  showDropdown={showDropdown}
-                  handleClickAway={handleClickAway}
-                />
-              </span>
-            </p> */}
             <ul className='home-drinks-container'>
               {drinksList.map((drink: DrinksListData) => (
                 <Link className='link' key={drink.id} to={`drink/${drink.id}`}>
