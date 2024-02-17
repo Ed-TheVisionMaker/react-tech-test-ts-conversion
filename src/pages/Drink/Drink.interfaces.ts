@@ -4,7 +4,7 @@ export interface PartialApiData {
   abv: string;
   tagline: string;
   description: string;
-  food_pairing: string[]
+  food_pairing: string[];
 }
 
 export interface SingleDrinkData {
