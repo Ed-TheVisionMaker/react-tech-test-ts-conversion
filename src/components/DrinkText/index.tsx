@@ -1,6 +1,9 @@
 import React from 'react';
 import { DrinksListData } from '../../pages/Home/Home.interfaces';
-import { SingleDrinkData, FoodPairingWithId } from '../../pages/Drink/Drink.interfaces';
+import {
+  SingleDrinkData,
+  FoodPairingWithId,
+} from '../../pages/Drink/Drink.interfaces';
 
 interface DrinkTextProps {
   drinkData: DrinksListData | SingleDrinkData | null;
@@ -41,7 +44,7 @@ const DrinkText: React.FC<DrinkTextProps> = ({ drinkData, location }) => {
   };
 
   const textDrinkPage = () => {
-    if (drinkData === null)   return null;
+    if (drinkData === null) return null;
     const { name, tagline, abv, description } = drinkData as SingleDrinkData;
     const taglinePeriodRemoved = tagline?.replace('.', '');
     return (

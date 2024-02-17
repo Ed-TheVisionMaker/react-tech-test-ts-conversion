@@ -1,4 +1,4 @@
-import React from'react';
+import React from 'react';
 import { useNavigate } from 'react-router';
 import './NavButton.css';
 
@@ -16,6 +16,6 @@ const NavButton: React.FC = () => {
       </button>
     </div>
   );
-}
+};
 
 export default NavButton;

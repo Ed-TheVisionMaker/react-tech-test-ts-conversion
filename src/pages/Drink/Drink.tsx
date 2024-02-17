@@ -5,7 +5,11 @@ import DrinkImage from '../../components/DrinkImage';
 import DrinkText from '../../components/DrinkText';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import NavButton from '../../components/NavButton';
-import { SingleDrinkData, FoodPairingWithId, PartialApiData } from './Drink.interfaces';
+import {
+  SingleDrinkData,
+  FoodPairingWithId,
+  PartialApiData,
+} from './Drink.interfaces';
 
 function Drink() {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,9 +40,11 @@ function Drink() {
       food_pairing: foodPairing,
     } = data[0];
 
-    const foodPairingWithId: FoodPairingWithId[] = foodPairing.map((food, i) => {
-      return { description: food, id: i + 1 };
-    });
+    const foodPairingWithId: FoodPairingWithId[] = foodPairing.map(
+      (food, i) => {
+        return { description: food, id: i + 1 };
+      }
+    );
 
     return {
       name,
@@ -60,7 +66,11 @@ function Drink() {
       {!isLoading && (
         <div className='drink-wrapper'>
           <div className='drink-container'>
-            <DrinkImage name={drinkData?.name} imageUrl={drinkData?.imageUrl} location={'Drink'} />
+            <DrinkImage
+              name={drinkData?.name}
+              imageUrl={drinkData?.imageUrl}
+              location={'Drink'}
+            />
             <DrinkText drinkData={drinkData} location={'Drink'} />
             <NavButton />
           </div>
