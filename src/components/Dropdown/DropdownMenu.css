@@ -1,69 +1,31 @@
 .dropdown-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: absolute;
+  top: 150px;
+  right: 20px;
+  font-size: 18px;
 }
 
-.dropdown-display-wrapper {
-  display: flex;
-  padding: 5px;
-  align-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.304);
-  border-radius: 5px;
-  background-color: #f5f5f5;
-}
 
-.dropdown-display-number {
+.dropdown-dropdown-label {
+  font-weight: 300;
   margin-right: 10px;
-  padding-left: 5px;
 }
 
-.dropdown-dropdown-button {
-  border: none;
+.dropdown-dropdown-select {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
   border-radius: 10px;
   background-color: #f5f5f5;
   border: 1px solid transparent;
-}
-
-.dropdown-dropdown-button:hover {
-  border: 1px solid rgba(0, 0, 0, 0.304);
-}
-
-.dropdown-options-button {
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  background-color: #f5f5f5;
-  padding: 0 8px 5px;
-  text-align: left;
+  padding: 10px 15px;
   cursor: pointer;
 }
 
-.dropdown-options-button:hover {
-  background-color: rgba(0, 0, 0, 0.304);
+.dropdown-dropdown-select:hover {
+  border: 1px solid rgba(255, 166, 0, 0.679);
 }
 
-.dropdown-options-button:first-child {
-  padding: none;
-}
-
-.dropdown-chevron-down {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.dropdown-options-wrapper {
-  position: absolute;
-  top: 38px;
-  left: 43px;
-  display: flex;
-  flex-direction: column;
-  font-weight: 300;
-  border: 1px solid rgba(0, 0, 0, 0.304);
-  border-radius: 5px;
-  padding: 5px 0;
-  background-color: #f5f5f5;
-  cursor: pointer;
+.dropdown-dropdown-option:hover {
+  background: rgba(255, 166, 0, 0.679);
 }
