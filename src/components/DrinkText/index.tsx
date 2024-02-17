@@ -1,5 +1,5 @@
 import React from 'react';
-import { DrinksListData } from '../../pages/Home/Home';
+import { DrinksListData } from '../../pages/Home/Home.interfaces';
 import { SingleDrinkData, FoodPairingWithId } from '../../pages/Drink/Drink.interfaces';
 
 interface DrinkTextProps {
