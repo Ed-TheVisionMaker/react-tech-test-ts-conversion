@@ -5,29 +5,7 @@ import DrinkImage from '../../components/DrinkImage';
 import DrinkText from '../../components/DrinkText';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import NavButton from '../../components/NavButton';
-
-interface PartialDrinkData {
-  name: string;
-  image_url: string;
-  abv: string;
-  tagline: string;
-  description: string;
-  food_pairing: string[]
-}
-
-export interface DrinkData {
-  imageUrl: string;
-  name: string;
-  abv: string;
-  tagline: string;
-  description: string;
-  foodPairing: FoodPairingWithId[];
-}
-
-export interface FoodPairingWithId {
-  description: string;
-  id: number;
-}
+import { DrinkData, FoodPairingWithId, PartialApiData } from './Drink.interfaces';
 
 function Drink() {
   const [isLoading, setIsLoading] = useState(true);
@@ -48,7 +26,7 @@ function Drink() {
     }
   };
 
-  const extractRequiredData = (data: PartialDrinkData[]) => {
+  const extractRequiredData = (data: PartialApiData[]) => {
     const {
       name,
       image_url: imageUrl,
