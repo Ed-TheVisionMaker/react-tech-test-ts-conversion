@@ -1,10 +1,9 @@
 import React from 'react';
-import { DrinksListData } from '../../pages/Home/Home';
-import { DrinkData } from '../../pages/Drink/Drink';
-import { FoodPairingWithId } from '../../pages/Drink/Drink';
+import { DrinksListData } from '../../pages/Home/Home.interfaces';
+import { SingleDrinkData, FoodPairingWithId } from '../../pages/Drink/Drink.interfaces';
 
 interface DrinkTextProps {
-  drinkData: DrinksListData | DrinkData | null;
+  drinkData: DrinksListData | SingleDrinkData | null;
   location: string;
 }
 
@@ -43,7 +42,7 @@ const DrinkText: React.FC<DrinkTextProps> = ({ drinkData, location }) => {
 
   const textDrinkPage = () => {
     if (drinkData === null)   return null;
-    const { name, tagline, abv, description } = drinkData as DrinkData;
+    const { name, tagline, abv, description } = drinkData as SingleDrinkData;
     const taglinePeriodRemoved = tagline?.replace('.', '');
     return (
       <div className='drink-text-wrapper'>

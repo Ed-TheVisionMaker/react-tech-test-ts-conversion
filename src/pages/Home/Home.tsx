@@ -6,20 +6,7 @@ import DrinkImage from '../../components/DrinkImage';
 import DrinkText from '../../components/DrinkText';
 import Dropdown from '../../components/Dropdown';
 import LoadingSpinner from '../../components/LoadingSpinner';
-
-interface PartialDrinkData {
-  id: string;
-  image_url: string;
-  name: string;
-  description: string;
-}
-
-export interface DrinksListData {
-  id: string;
-  imageUrl: string;
-  name: string;
-  description: string;
-}
+import { DrinksListData, PartialApiData } from './Home.interfaces';
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -79,8 +66,8 @@ function Home() {
     setIsLoading(false);
   };
 
-  const trimDrinkData = (data: PartialDrinkData[], drinksNumber: number) => {
-    let trimmedData: PartialDrinkData[] = [];
+  const trimDrinkData = (data: PartialApiData[], drinksNumber: number) => {
+    let trimmedData: PartialApiData[] = [];
     if (drinksNumber === 10) {
       trimmedData = data.slice(0, 10);
     } else if (drinksNumber === 20) {
@@ -91,7 +78,7 @@ function Home() {
     return trimmedData;
   };
 
-  const createDrinksList = (data: PartialDrinkData[], drinksNumber: number) => {
+  const createDrinksList = (data: PartialApiData[], drinksNumber: number) => {
     const drinksRequired = trimDrinkData(data, drinksNumber);
     const drinksList: DrinksListData[] = drinksRequired.map((drink) => {
       return {
