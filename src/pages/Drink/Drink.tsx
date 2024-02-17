@@ -5,11 +5,11 @@ import DrinkImage from '../../components/DrinkImage';
 import DrinkText from '../../components/DrinkText';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import NavButton from '../../components/NavButton';
-import { DrinkData, FoodPairingWithId, PartialApiData } from './Drink.interfaces';
+import { SingleDrinkData, FoodPairingWithId, PartialApiData } from './Drink.interfaces';
 
 function Drink() {
   const [isLoading, setIsLoading] = useState(true);
-  const [drinkData, setDrinkData] = useState<DrinkData | null>(null);
+  const [drinkData, setDrinkData] = useState<SingleDrinkData | null>(null);
   const params = useParams();
   const id = params.drinkId;
 

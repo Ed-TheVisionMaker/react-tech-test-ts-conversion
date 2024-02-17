@@ -7,7 +7,7 @@ export interface PartialApiData {
   food_pairing: string[]
 }
 
-export interface DrinkData {
+export interface SingleDrinkData {
   imageUrl: string;
   name: string;
   abv: string;
