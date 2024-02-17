@@ -1,11 +1,11 @@
-import React, { ChangeEvent, useState } from 'react';
-const Dropdown: React.FC = () => {
-  const [numberOfDrinks, setNumberOfDrinks] = useState(10);
+import React, { ChangeEvent } from 'react';
 
-  const handleChange = (e: ChangeEvent<HTMLSelectElement>): void => {
-    const parsedNumber = parseInt(e.target.value);
-    setNumberOfDrinks(parsedNumber);
-  };
+interface DropdownProps {
+  handleChange: (e: ChangeEvent<HTMLSelectElement>) => void;
+  numberOfDrinks: number;
+}
+
+const Dropdown: React.FC<DropdownProps> = ({ handleChange, numberOfDrinks }) => {
 
   const preventRefresh = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();

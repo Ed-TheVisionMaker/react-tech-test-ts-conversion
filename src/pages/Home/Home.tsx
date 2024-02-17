@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState, ChangeEvent } from 'react';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import DrinkImage from '../../components/DrinkImage';
 import DrinkText from '../../components/DrinkText';
@@ -8,10 +7,15 @@ import Dropdown from '../../components/Dropdown';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import { DrinksListData, PartialApiData } from './Home.interfaces';
 
-function Home() {
+const Home: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [drinksList, setDrinksList] = useState<DrinksListData[]>([]);
   const [numberOfDrinks, setNumberOfDrinks] = useState(10);
+
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>): void => {
+    const parsedNumber = parseInt(e.target.value);
+    setNumberOfDrinks(parsedNumber);
+  };
 
   const hasData = () => {
     return drinksList.length > 0;
@@ -93,7 +97,10 @@ function Home() {
           <div className='home-container'>
             <h2 className='home-title'>BrewDog</h2>
             <h3 className='home-tagline'>Something for everyone</h3>
-            <Dropdown />
+            <Dropdown
+              handleChange={handleChange}
+              numberOfDrinks={numberOfDrinks}
+            />
             <ul className='home-drinks-container'>
               {drinksList.map((drink: DrinksListData) => (
                 <Link className='link' key={drink.id} to={`drink/${drink.id}`}>
@@ -115,6 +122,6 @@ function Home() {
       )}
     </>
   );
-}
+};
 
 export default Home;
